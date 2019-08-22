@@ -1,3 +1,4 @@
+const artists = require('../models/artist');
 const albums = require('../models/album');
 
 class mainController {

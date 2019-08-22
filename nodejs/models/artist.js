@@ -3,7 +3,7 @@ const uuid = require('uuid');
 
 const Schema = mongoose.Schema;
 const artistSchema = new Schema({
-    "artistId" : { "type": String, "required": true },
+    "artistId" : { "type": String, "required": true, "unique": true },
     "name" : { "type": String, "required": true },
     "description" : { "type": String, "required": true },
 });

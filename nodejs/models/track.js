@@ -8,6 +8,7 @@ const trackSchema = new Schema({
     "albumId": { "type": String, "required": true }, 
     "name" : { "type": String, "required": true },
     "description" : { "type": String, "required": true },
+    "url" : { "type": String, "required": true },
     "rating": { "type": Number, "required": true, "default" : 0 },
     "purchases": { "type": Number, "required": true, "default" : 0 },
 });
@@ -21,12 +22,17 @@ const trackModel = mongoose.model('Track', trackSchema);
 
 class Tracks {
 
+    async addTrack({ artistId, albumId, name, description, url }) {
+        const track = new trackModel({ artistId, albumId, name, description, url });
+        return await track.save();
+    }
+
     async getTracks(filters) {
         return await trackModel.find(filters);
     }
 
     async purchaseTrack(trackId, updateFields) {
-        return await albumModel.update({ "trackId" : trackId },
+        return await trackModel.update({ "trackId" : trackId },
                                         { $set: updateFields },
                                         { "multi" : false, "upsert" : false });
     }

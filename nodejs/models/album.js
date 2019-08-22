@@ -21,7 +21,7 @@ const albumModel = mongoose.model('Album', albumSchema);
 class Albums {
 
     async createAlbum({ artistId, name, description }) {
-        const album = new orderModel({ artistId, name, description });
+        const album = new albumModel({ artistId, name, description });
         return await album.save();
     }
 
