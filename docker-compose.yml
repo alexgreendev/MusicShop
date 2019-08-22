@@ -1,0 +1,35 @@
+version: '2'
+services:
+  nginx:
+    image: msnginx
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    volumes:
+      - ./nginx/configs:/etc/nginx/conf.d
+      - ./nginx/public:/usr/share/nginx
+    ports:
+      - "3300:80"
+    # logging:
+    #   driver: none
+  mongodb:
+    image: msmongodb
+    build:
+      context: ./docker/mongodb
+      dockerfile: Dockerfile
+    volumes:
+      - ./mongodb/db:/data/db
+      - ./mongodb/configdb:/data/configdb
+    ports:
+      - "27017:27017"
+    logging:
+      driver: none
+  nodejs:
+    image: msnodejs
+    build:
+      context: ./docker/nodejs
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./nodejs:/var/usr/musicShop/src
+    working_dir: /var/usr/musicShop/src/
