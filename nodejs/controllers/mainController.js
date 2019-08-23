@@ -22,7 +22,7 @@ class mainController {
         const track = await tracksModel.getTracks({ albumId, trackId });
         const purchases = Number(track[0]._doc.purchases) + 1;
         await tracksModel.updateTrack(trackId, { purchases });
-        res.send(track);
+        res.send(track[0]._doc);
         res.end();
     }
 
@@ -38,7 +38,14 @@ class mainController {
         const album = await albumsModel.getAlbums({ artistId, albumId });
         const purchases = Number(album[0]._doc.purchases) + 1;
         await albumsModel.updateAlbums(albumId, { purchases });
-        res.send(album);
+        res.send(album[0]._doc);
+        res.end();
+    }
+
+    static async getArtists(req, res) {
+        const filers = req.query;
+        const artists = await artistsModel.getArtists(filers);
+        res.send(artists);
         res.end();
     }
 

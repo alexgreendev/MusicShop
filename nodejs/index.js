@@ -12,6 +12,7 @@ app.patch(`${config.baseUrl}/albums/:albumId/tracks/:trackId/`, mainController.b
 app.get(`${config.baseUrl}/artists/:artistId/albums/`, mainController.getAlbumsByArtistId);
 app.patch(`${config.baseUrl}/artists/:artistId/albums/:albumId/`, mainController.buyAlbum);
 
+app.get(`${config.baseUrl}/artists/`, mainController.getArtists);
 app.get(`${config.baseUrl}/artists/:artistId/`, mainController.getArtistById);
 
 app.get(`${config.baseUrl}/search/`, mainController.search);

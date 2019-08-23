@@ -5,6 +5,7 @@
 https://app.swaggerhub.com/apis-docs/Home7128/MusicShop/1.0.0
 
 ## Dependencies
+* make
 * docker
 * docker-compose
 

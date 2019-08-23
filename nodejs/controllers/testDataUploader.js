@@ -21,7 +21,7 @@ class TestDataUploader {
     
         const testAlbumSecond = {
             artistId: artist.artistId,
-            name: "Nice baby",
+            name: "search Nice baby",
             description: "Music about love",
         };
     
@@ -31,7 +31,7 @@ class TestDataUploader {
         const trackOneForFirstAlbum = {
             artistId: artist.artistId, 
             albumId: albumFirst.albumId, 
-            name: "la la la", 
+            name: "search la la la", 
             description: "You mast be listen this track", 
             file: "lalala.mp3",
         };
@@ -47,7 +47,7 @@ class TestDataUploader {
         const trackThreeForFirstAlbum = {
             artistId: artist.artistId, 
             albumId: albumFirst.albumId, 
-            name: "ha ha ha", 
+            name: "search ha ha ha", 
             description: "Very funny track", 
             file: "hahaha.mp3",
         };
@@ -59,7 +59,7 @@ class TestDataUploader {
         const trackOneForSecondAlbum = {
             artistId: artist.artistId, 
             albumId: albumSecond.albumId, 
-            name: "Kiss", 
+            name: "search Kiss", 
             description: "You mast be listen this track", 
             file: "kiss.mp3",
         };
@@ -67,7 +67,7 @@ class TestDataUploader {
         const trackTwoForSecondAlbum = {
             artistId: artist.artistId, 
             albumId: albumSecond.albumId, 
-            name: "My love", 
+            name: "search My love", 
             description: "Very funny track", 
             file: "love.mp3",
         };
