@@ -5,6 +5,8 @@ services:
     build:
       context: ./docker/nginx
       dockerfile: Dockerfile
+    depends_on:
+      - "nodejs"
     volumes:
       - ./nginx/configs:/etc/nginx/conf.d
       - ./nginx/public:/usr/share/nginx
@@ -17,9 +19,9 @@ services:
     build:
       context: ./docker/mongodb
       dockerfile: Dockerfile
-    volumes:
-      - ./mongodb/db:/data/db
-      - ./mongodb/configdb:/data/configdb
+    # volumes:
+    #   - ./mongodb/db:/data/db
+    #   - ./mongodb/configdb:/data/configdb
     ports:
       - "27017:27017"
     logging:
@@ -29,6 +31,8 @@ services:
     build:
       context: ./docker/nodejs
       dockerfile: Dockerfile
+    depends_on:
+      - "mongodb"
     restart: always
     volumes:
       - ./nodejs:/var/usr/musicShop/src

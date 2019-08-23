@@ -9,16 +9,10 @@
   "author": "Chepaykin Alexander",
   "license": "MIT",
   "dependencies": {
-    "ajv": "^5.5.1",
     "body-parser": "^1.19.0",
     "config": "^3.1.0",
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "lodash": "^4.17.14",
-    "log": "^1.4.0",
     "mongoose": "^4.13.4",
-    "path": "^0.12.7",
-    "url": "^0.11.0",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
